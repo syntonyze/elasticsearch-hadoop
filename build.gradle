@@ -52,3 +52,4 @@ task generateDependenciesReport(type: ConcatFilesTask) {
     headerLine = "name,version,url,license"
     target = new File(System.getProperty('csv')?: "${project.buildDir}/reports/dependencies/es-hadoop-dependencies.csv")
 }
+

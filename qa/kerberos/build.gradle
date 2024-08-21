@@ -40,6 +40,13 @@ configurations {
     stormDeps
 }
 
+configurations.all {
+    resolutionStrategy.dependencySubstitution {
+        substitute(module("hadoop.common:hadoop-3.3.2:hadoop-3.3.2"))
+                .with(module("hadoop.common:hadoop-3.3.6:hadoop-3.3.6"))
+    }
+}
+
 tasks.withType(ScalaCompile) { ScalaCompile task ->
     task.sourceCompatibility = project.ext.minimumRuntimeVersion
     task.targetCompatibility = project.ext.minimumRuntimeVersion
